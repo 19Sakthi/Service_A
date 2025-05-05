@@ -1,0 +1,10 @@
+com\example\Service_A\dto\StudentDto.class
+com\example\Service_A\ServiceInter\StudentServiceAServiceInterface.class
+com\example\Service_A\ServiceImpl\StudentServiceAServiceImpl.class
+com\example\Service_A\entity\StudentEntity.class
+com\example\Service_A\utility\ResponseStructure.class
+com\example\Service_A\ServiceAApplication.class
+com\example\Service_A\controller\StudentControllerServiceA.class
+com\example\Service_A\exception\GlobalExceptionHandler.class
+com\example\Service_A\repository\StudentRespositoryServiceA.class
+com\example\Service_A\utility\Config.class

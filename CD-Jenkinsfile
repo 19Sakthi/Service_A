@@ -6,18 +6,19 @@ pipeline {
     }
  
     environment {
-        IMAGE_NAME = "23logesh/microservice_a:${params.DOCKER_TAG}"
+        IMAGE_NAME = "sakthi921/service_a:${params.DOCKER_TAG}"
+        NETWORK_NAME = "kafka_default"
     }
  
     stages {
         stage('Docker Pull') {
             steps {
                 script {
-                    // Remove the old image if it exists
+                 
                     sh """
                         docker images -q ${IMAGE_NAME} | xargs -r docker rmi || echo 'No old image to remove'
                     """
-                    // Pull the new image
+                   
                     sh "docker pull ${IMAGE_NAME}"
                 }
             }
@@ -26,11 +27,11 @@ pipeline {
         stage('Remove Old Container') {
             steps {
                 script {
-                    // Stop and remove the existing container if it exists
+                   
                     sh """
-                        if [ \$(docker ps -q -f name=microservice-a) ]; then
-                            docker stop microservice-a
-                            docker rm microservice-a
+                        if [ \$(docker ps -q -f name=service_a) ]; then
+                            docker stop service_a
+                            docker rm service_a
                         fi
                     """
                 }
@@ -40,8 +41,13 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Run the container in detached mode
-                    sh "docker run -d -p 8082:8082 --name microservice-a ${IMAGE_NAME}"
+                    sh """
+                        docker run -d --name service_a \
+                        --network ${NETWORK_NAME} \
+                        -p 8082:8082 \
+                        -e SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:29092 \
+                        ${IMAGE_NAME}
+                    """
                 }
             }
         }
@@ -49,18 +55,17 @@ pipeline {
         stage('Check Container') {
             steps {
                 script {
-                    // Wait and check if the container is running
-                    sh 'docker ps -f name=microservice-a'
+                  
+                    sh 'docker ps -f name=service_a'
                 }
             }
         }
  
-        stage('Clean Up') {
+        stage('Stoped') {
             steps {
                 script {
-                    // Optionally stop the container after check (if needed)
-                    //sh 'docker stop microservice-a'
-                    echo 'Pipeline ends without stopping microservice-a'
+                   
+                    echo 'Pipeline ends without stopping service_a'
                 }
             }
         }

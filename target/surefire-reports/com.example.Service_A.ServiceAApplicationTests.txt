@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.Service_A.ServiceAApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.600 s -- in com.example.Service_A.ServiceAApplicationTests
