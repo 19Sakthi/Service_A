@@ -1,0 +1,10 @@
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\controller\StudentControllerServiceA.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\dto\StudentDto.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\entity\StudentEntity.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\exception\GlobalExceptionHandler.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\repository\StudentRespositoryServiceA.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\ServiceAApplication.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\ServiceImpl\StudentServiceAServiceImpl.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\ServiceInter\StudentServiceAServiceInterface.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\utility\Config.java
+D:\gitrepo-projects\Assessment 2\Service A\src\main\java\com\example\Service_A\utility\ResponseStructure.java

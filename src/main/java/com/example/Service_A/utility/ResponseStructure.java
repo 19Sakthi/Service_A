@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 
 @Component
-@ComponentScan(basePackages = "Service_A")
+@ComponentScan(basePackages = "Service A")
 @Data
 public class ResponseStructure {
 	

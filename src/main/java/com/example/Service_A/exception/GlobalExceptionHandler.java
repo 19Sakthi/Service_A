@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(NullPointerException.class)
 	public ResponseEntity<ResponseStructure> NullPointerException(NullPointerException e){
-		responseStructure.setMessage("NullPointerException - Occured");
+		responseStructure.setMessage("NullPointerException - Occurred");
 		responseStructure.setStatus(HttpStatus.BAD_REQUEST.value());
 		return new ResponseEntity<>(responseStructure, HttpStatus.OK);
 	}
@@ -41,13 +41,11 @@ public class GlobalExceptionHandler {
 		responseStructure.setStatus(HttpStatus.CONFLICT.value());
 		return new ResponseEntity<>(responseStructure,HttpStatus.OK);
 	}
-	
+	@ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<ResponseStructure> ConstraintViolationException(ConstraintViolationException a){
-		responseStructure.setMessage("Invaild Data Passed ");
+		responseStructure.setMessage("Invalid Data Passed ");
 		responseStructure.setStatus(HttpStatus.BAD_REQUEST.value());
 		return new ResponseEntity<>(responseStructure,HttpStatus.OK);
-		
-		
 	}
 
 
