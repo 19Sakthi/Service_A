@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-        git branch: 'submain', url: 'https://github.com/19Sakthi/Service_A.git'
+        git branch: 'main', url: 'https://github.com/19Sakthi/Service_A.git'
     }
         }
 
